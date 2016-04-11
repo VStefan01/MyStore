@@ -1,0 +1,23 @@
+﻿@model IEnumerable<MyStore.Models.Category>
+
+@{
+    ViewBag.Title = "Categorii";
+}
+
+<h2>Categorii</h2>
+
+
+<div class="container">
+    <ul class="nav nav-tabs nav-stacked col-sm-3">
+        @foreach (var item in Model)
+        {
+
+            <li>
+                @Html.ActionLink(item.Name, "Browse", new { id = item.Name })
+            </li>
+        }
+    </ul>
+
+
+
+</div>
