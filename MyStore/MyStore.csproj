@@ -102,6 +102,7 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Site.css" />
+    <Content Include="CSS\Style.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -112,6 +113,18 @@
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
+    <Content Include="Images\Laptop\AMD Dual.png" />
+    <Content Include="Images\Laptop\AMD Quad.png" />
+    <Content Include="Images\Laptop\Intel Celeron.png" />
+    <Content Include="Images\Laptop\Intel I3.png" />
+    <Content Include="Images\Laptop\Intel I5.png" />
+    <Content Include="Images\Laptop\Intel I7.png" />
+    <Content Include="Images\Laptop\Intel M.png" />
+    <Content Include="Images\Laptop\Pentium Quad.png" />
+    <Content Include="Images\Phones\Samsung GalaxyS6.png" />
+    <Content Include="Images\Photography\Canon SX710.png" />
+    <Content Include="Images\Tablets\Asus ZenPad.png" />
+    <Content Include="Images\TV\Samsung 101cm.png" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
@@ -121,6 +134,11 @@
     <None Include="Scripts\jquery-2.2.2.intellisense.js" />
     <Content Include="Scripts\jquery-2.2.2.js" />
     <Content Include="Scripts\jquery-2.2.2.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Web.config" />
     <Content Include="Views\_ViewStart.cshtml" />
@@ -130,17 +148,30 @@
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\CategoryController.cs" />
+    <Compile Include="Controllers\ProductsController.cs" />
     <Compile Include="Data\StoreDatabaseContext.cs" />
+    <Compile Include="Data\StoreService.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201604112051586_InitialCreate.cs" />
+    <Compile Include="Migrations\201604112051586_InitialCreate.Designer.cs">
+      <DependentUpon>201604112051586_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201604121628495_products.cs" />
+    <Compile Include="Migrations\201604121628495_products.Designer.cs">
+      <DependentUpon>201604121628495_products.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Category.cs" />
+    <Compile Include="Models\Product.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\web.config" />
     <Content Include="packages.config" />
     <Content Include="Scripts\jquery-2.2.2.min.map" />
+    <Content Include="Views\Category\Browse.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -150,6 +181,14 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201604112051586_InitialCreate.resx">
+      <DependentUpon>201604112051586_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201604121628495_products.resx">
+      <DependentUpon>201604121628495_products.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -1,9 +1,12 @@
 ﻿@model IEnumerable<MyStore.Models.Category>
 
+
 @{
     ViewBag.Title = "Categorii";
 }
-
+<head>
+    <link type="text/css" rel="stylesheet" href="~/CSS/Style.css" />
+</head>
 <h2>Categorii</h2>
 
 
@@ -12,12 +15,17 @@
         @foreach (var item in Model)
         {
 
-            <li>
-                @Html.ActionLink(item.Name, "Browse", new { id = item.Name })
+            <li id="menu">
+               @Html.ActionLink(item.Name, "Browse", new { id = item.Name })
             </li>
         }
     </ul>
 
+    <div class="col-md-7 jumbotron text-center">
+        <p>Bine ati venit, alegeti o categorie din meniul stanga.</p>
 
+    </div>
 
 </div>
+
+

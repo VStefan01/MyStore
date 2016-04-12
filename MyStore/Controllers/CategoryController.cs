@@ -19,5 +19,21 @@ namespace MyStore.Controllers
         {
             return View(await _db.Categories.ToListAsync());
         }
+
+        public async Task<ActionResult> Browse(string id)
+        {
+            var category = _db.Categories;
+            var products = await _db.Products.Include("Category").Where(p => p.Category.Name == id).ToListAsync();
+
+            if (!products.Any())
+            {
+                return HttpNotFound();
+            }
+
+            return View(products);
+        }
     }
 }
+
+
+
