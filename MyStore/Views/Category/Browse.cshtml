@@ -15,7 +15,7 @@
         <div class="container-fluid">
             @foreach (var product in Model)
             {
-                <div class="col-md-4 col-sm-4 col-xs-4 container">
+                <div class="col-md-4 col-sm-4 container">
                     <a href="@Url.Action("Details", new { id = product.Id })">
                         <img alt="@product.Name" src="@Url.Content(product.ImageUrl)" />
                         <h4 class="control-label">@product.Name</h4>
@@ -27,19 +27,8 @@
     </div>
     <a class="btn btn-default" href="~/Category">Inapoi</a>
 
-
-
-
-
-    @*<ul id="category-list" class="list-unstyled">
-        @foreach (var product in Model)
-        {
-            <li class="col-lg-2 col-md-2 col-sm-2 col-xs-4 container">
-                <a href="@Url.Action("Details", new { id = product.Id })">
-                    <img alt="@product.Name" src="@Url.Content(product.ImageUrl)" />
-                    <h4 class="control-label">@product.Name</h4>
-                </a>
-            </li>
-        }
-    </ul>*@
 </div>
+
+
+
+

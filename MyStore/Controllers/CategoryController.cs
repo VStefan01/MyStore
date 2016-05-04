@@ -32,6 +32,24 @@ namespace MyStore.Controllers
 
             return View(products);
         }
+
+        public ActionResult Details(int? id)
+        {
+            if (!id.HasValue)
+            {
+                return HttpNotFound();
+            }
+
+            var product =  _db.Products.Include("Category").Where(p => p.Id == id).SingleOrDefault();
+
+            if (product == null)
+            {
+                return HttpNotFound();
+            }
+            return View(product);
+
+
+        }
     }
 }
 

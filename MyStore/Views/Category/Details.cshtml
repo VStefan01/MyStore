@@ -1,0 +1,40 @@
+﻿@model MyStore.Models.Product
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Detalii</h2>
+
+<h2>@Model.Name</h2>
+<p>
+    <img alt="@Model.Name" src="@Url.Content(Model.ImageUrl)" />
+</p>
+<div id="details">
+    <p>
+        <em>Categorie:</em>
+        @Model.Category.Name
+    </p>
+    <p>
+        <em>Pret:</em>
+        @Html.DisplayFor(model => model.Price) lei
+    </p>
+
+    <p>
+        <em>Descriere:</em>
+        @Html.DisplayFor(model => model.Description)
+    </p>
+
+
+    <p class="btn btn-default">
+        @Html.ActionLink("Inapoi", "Browse", new { id = Model.Category.Name })
+    </p>
+
+    <p class="btn btn-default">
+        @Html.ActionLink("Adauga in cos", "AddToCart", new { controller = "ShoppingCart", id = Model.Id })
+    </p>
+
+</div>
+
+
+

@@ -1,0 +1,50 @@
+﻿@model MyStore.Common.ShoppingCartViewModel
+
+@{
+    ViewBag.Title = "Cos Cumparaturi";
+}
+
+<h2>Cosul de cumparaturi</h2>
+
+<table id="cart-summary" width="100%">
+    <tr>
+        <th>
+            Produs
+        </th>
+        <th>
+            Pret (bucata)
+        </th>
+        <th>
+            Cantitate
+        </th>
+        <th></th>
+    </tr>
+    @foreach (var product in Model.Products)
+    {
+        <tr id="row-@product.CartId">
+            <td>
+                @Html.ActionLink(product.Product.Name, "Details", "Category", new { id = product.ProductId }, null)
+            </td>
+            <td>
+                @product.Product.Price
+            </td>
+            <td id="item-count-@product.CartId">
+                @product.Count
+            </td>
+            <td>
+                @Html.ActionLink("Remove from Cart", "RemoveFromCart", new { id = product.ProductId })
+            </td>
+        </tr>
+    }
+    <tr>
+        <td>
+            Total
+        </td>
+        <td></td>
+        <td></td>
+        <td id="cart-total">
+            @Model.Total
+        </td>
+    </tr>
+</table>
+

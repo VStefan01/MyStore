@@ -147,10 +147,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Common\ShoppingCart.cs" />
     <Compile Include="Controllers\CategoryController.cs" />
-    <Compile Include="Controllers\ProductsController.cs" />
+    <Compile Include="Controllers\ShoppingCartController.cs" />
     <Compile Include="Data\StoreDatabaseContext.cs" />
-    <Compile Include="Data\StoreService.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -162,9 +162,27 @@
     <Compile Include="Migrations\201604121628495_products.Designer.cs">
       <DependentUpon>201604121628495_products.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201604160758222_ProductDescription.cs" />
+    <Compile Include="Migrations\201604160758222_ProductDescription.Designer.cs">
+      <DependentUpon>201604160758222_ProductDescription.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201604160934054_CartProduct.cs" />
+    <Compile Include="Migrations\201604160934054_CartProduct.Designer.cs">
+      <DependentUpon>201604160934054_CartProduct.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201604211911390_CartProduct Date.cs" />
+    <Compile Include="Migrations\201604211911390_CartProduct Date.Designer.cs">
+      <DependentUpon>201604211911390_CartProduct Date.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201604211916592_CartProduct CartId.cs" />
+    <Compile Include="Migrations\201604211916592_CartProduct CartId.Designer.cs">
+      <DependentUpon>201604211916592_CartProduct CartId.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\CartProduct.cs" />
     <Compile Include="Models\Category.cs" />
     <Compile Include="Models\Product.cs" />
+    <Compile Include="Common\ShoppingCartViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -172,6 +190,8 @@
     <Content Include="packages.config" />
     <Content Include="Scripts\jquery-2.2.2.min.map" />
     <Content Include="Views\Category\Browse.cshtml" />
+    <Content Include="Views\Category\Details.cshtml" />
+    <Content Include="Views\ShoppingCart\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -188,6 +208,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201604121628495_products.resx">
       <DependentUpon>201604121628495_products.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201604160758222_ProductDescription.resx">
+      <DependentUpon>201604160758222_ProductDescription.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201604160934054_CartProduct.resx">
+      <DependentUpon>201604160934054_CartProduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201604211911390_CartProduct Date.resx">
+      <DependentUpon>201604211911390_CartProduct Date.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201604211916592_CartProduct CartId.resx">
+      <DependentUpon>201604211916592_CartProduct CartId.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
