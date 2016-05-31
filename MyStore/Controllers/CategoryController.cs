@@ -40,7 +40,7 @@ namespace MyStore.Controllers
                 return HttpNotFound();
             }
 
-            var product =  _db.Products.Include("Category").Where(p => p.Id == id).SingleOrDefault();
+            var product = _db.Products.Include("Category").Where(p => p.Id == id).SingleOrDefault();
 
             if (product == null)
             {

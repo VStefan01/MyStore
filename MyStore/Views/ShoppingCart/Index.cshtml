@@ -6,7 +6,7 @@
 
 <h2>Cosul de cumparaturi</h2>
 
-<table id="cart-summary" width="100%">
+<table class="table table-striped col-md-3">
     <tr>
         <th>
             Produs
@@ -21,15 +21,15 @@
     </tr>
     @foreach (var product in Model.Products)
     {
-        <tr id="row-@product.CartId">
+        <tr>
             <td>
                 @Html.ActionLink(product.Product.Name, "Details", "Category", new { id = product.ProductId }, null)
             </td>
             <td>
                 @product.Product.Price
             </td>
-            <td id="item-count-@product.CartId">
-                @product.Count
+            <td>
+                @product.Quantity
             </td>
             <td>
                 @Html.ActionLink("Remove from Cart", "RemoveFromCart", new { id = product.ProductId })
@@ -38,13 +38,20 @@
     }
     <tr>
         <td>
-            Total
+            <h4>Total</h4>
         </td>
         <td></td>
         <td></td>
-        <td id="cart-total">
-            @Model.Total
+        <td>
+            <h4>@Model.Total</h4>
         </td>
     </tr>
 </table>
+
+@if (Model.Total > 0)
+{
+    <p class="btn btn-default">
+        @Html.ActionLink("Confirma comanda", "Checkout", new { controller = "ShoppingCart" })
+    </p>
+}
 

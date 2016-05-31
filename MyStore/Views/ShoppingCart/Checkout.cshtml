@@ -1,0 +1,49 @@
+﻿@model MyStore.Common.CheckoutViewModel
+@{
+    ViewBag.Title = "Checkout";
+}
+
+<form action="@Url.Action("Checkout")" method="POST">
+
+    <h2>Confirmare comanda</h2>
+    @Html.ValidationSummary()  @*if validation is not successful displays the errors*@
+    <fieldset>
+        <legend>Detalii livrare</legend>
+        <p>
+            <div>@Html.LabelFor(m => m.FirstName)</div>
+            <div>@Html.EditorFor(m => m.FirstName)</div>
+        </p>
+        <p>
+            <div>@Html.LabelFor(m => m.LastName)</div>
+            <div>@Html.EditorFor(m => m.LastName)</div>
+        </p>
+        <p>
+            <div>@Html.LabelFor(m => m.Address)</div>
+            <div>@Html.EditorFor(m => m.Address)</div>
+        </p>
+        <p>
+            <div>@Html.LabelFor(m => m.City)</div>
+            <div>@Html.EditorFor(m => m.City)</div>
+        </p>
+
+        <p>
+            <div>@Html.LabelFor(m => m.PostalCode)</div>
+            <div>@Html.EditorFor(m => m.PostalCode)</div>
+        </p>
+        <p>
+            <div>@Html.LabelFor(m => m.Country)</div>
+            <div>@Html.EditorFor(m => m.Country)</div>
+        </p>
+        <p>
+            <div>@Html.LabelFor(m => m.Phone)</div>
+            <div>@Html.EditorFor(m => m.Phone)</div>
+        </p>
+        <p>
+            <div>@Html.LabelFor(m => m.Email)</div>
+            <div>@Html.EditorFor(m => m.Email)</div>
+        </p>
+    </fieldset>
+
+    <input class="submit-button btn btn-default" type="submit" value="Confirm comanda">
+
+</form>

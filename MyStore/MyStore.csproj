@@ -147,6 +147,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Common\CheckoutViewModel.cs" />
     <Compile Include="Common\ShoppingCart.cs" />
     <Compile Include="Controllers\CategoryController.cs" />
     <Compile Include="Controllers\ShoppingCartController.cs" />
@@ -178,9 +179,19 @@
     <Compile Include="Migrations\201604211916592_CartProduct CartId.Designer.cs">
       <DependentUpon>201604211916592_CartProduct CartId.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201605041450452_changed CartProduct.cs" />
+    <Compile Include="Migrations\201605041450452_changed CartProduct.Designer.cs">
+      <DependentUpon>201605041450452_changed CartProduct.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201605041620536_Orders.cs" />
+    <Compile Include="Migrations\201605041620536_Orders.Designer.cs">
+      <DependentUpon>201605041620536_Orders.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\CartProduct.cs" />
     <Compile Include="Models\Category.cs" />
+    <Compile Include="Models\Order.cs" />
+    <Compile Include="Models\OrderDetail.cs" />
     <Compile Include="Models\Product.cs" />
     <Compile Include="Common\ShoppingCartViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -192,6 +203,8 @@
     <Content Include="Views\Category\Browse.cshtml" />
     <Content Include="Views\Category\Details.cshtml" />
     <Content Include="Views\ShoppingCart\Index.cshtml" />
+    <Content Include="Views\ShoppingCart\Checkout.cshtml" />
+    <Content Include="Views\ShoppingCart\Complete.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -220,6 +233,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201604211916592_CartProduct CartId.resx">
       <DependentUpon>201604211916592_CartProduct CartId.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201605041450452_changed CartProduct.resx">
+      <DependentUpon>201605041450452_changed CartProduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201605041620536_Orders.resx">
+      <DependentUpon>201605041620536_Orders.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
