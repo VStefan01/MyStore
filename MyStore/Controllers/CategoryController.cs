@@ -33,14 +33,14 @@ namespace MyStore.Controllers
             return View(products);
         }
 
-        public ActionResult Details(int? id)
+        public async Task<ActionResult> Details(int? id)
         {
             if (!id.HasValue)
             {
                 return HttpNotFound();
             }
 
-            var product = _db.Products.Include("Category").Where(p => p.Id == id).SingleOrDefault();
+            var product = await _db.Products.Include("Category").Where(p => p.Id == id).SingleOrDefaultAsync();
 
             if (product == null)
             {

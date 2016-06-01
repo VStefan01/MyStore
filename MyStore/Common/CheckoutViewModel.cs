@@ -10,10 +10,12 @@ namespace MyStore.Common
     public class CheckoutViewModel
     {
         [Required]
+        [Display(Name = "First Name")]
         [StringLength(80)]
         public string FirstName { get; set; }
 
         [Required]
+        [Display(Name = "Last Name")]
         [StringLength(80)]
         public string LastName { get; set; }
 
@@ -26,6 +28,7 @@ namespace MyStore.Common
         public string City { get; set; }
 
         [Required]
+        [Display(Name = "Postal Code")]
         [StringLength(12, MinimumLength = 5)]
         public string PostalCode { get; set; }
 
@@ -39,6 +42,7 @@ namespace MyStore.Common
         public string Phone { get; set; }
 
         [Required]
+        [Display(Name = "Email Address")]
         [RegularExpression(@"[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}",
             ErrorMessage = "Email is is not valid.")]
         [DataType(DataType.EmailAddress)]
